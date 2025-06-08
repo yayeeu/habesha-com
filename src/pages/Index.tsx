@@ -6,7 +6,18 @@ import NotificationForm from '@/components/NotificationForm';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background habesha-pattern geometric-overlay cultural-motif relative overflow-hidden">
+    <div 
+      className="min-h-screen bg-background geometric-overlay cultural-motif relative overflow-hidden"
+      style={{
+        backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Dark overlay for better readability */}
+      <div className="absolute inset-0 bg-background/70"></div>
+      
       {/* Ambient background effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-habesha-gold/5 via-transparent to-habesha-red/5 animate-gradient-shift"></div>
       

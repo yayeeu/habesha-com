@@ -11,10 +11,9 @@ const HabeshaLogo = () => {
           <div className="absolute -top-1 -right-1 w-2 h-2 bg-habesha-red rounded-full opacity-80"></div>
           <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-habesha-green rounded-full opacity-70"></div>
           
-          {/* Main logo */}
-          <h1 className="text-5xl md:text-7xl font-bold font-playfair text-habesha-gold">
-            Habesha
-            <span className="text-habesha-red">.com</span>
+          {/* Logo Text */}
+          <h1 className="text-4xl md:text-6xl font-bold font-playfair text-habesha-gold">
+            Habesha<span className="text-habesha-red">.com</span>
           </h1>
           
           {/* Decorative line */}

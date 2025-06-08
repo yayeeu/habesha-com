@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 
 const CountdownTimer = () => {
@@ -10,7 +9,7 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-08-22T00:00:00').getTime();
+    const targetDate = new Date('2025-07-04T00:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();

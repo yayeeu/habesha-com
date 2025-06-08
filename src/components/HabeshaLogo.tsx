@@ -11,12 +11,10 @@ const HabeshaLogo = () => {
           <div className="absolute -top-1 -right-1 w-2 h-2 bg-habesha-red rounded-full opacity-80"></div>
           <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-habesha-green rounded-full opacity-70"></div>
           
-          {/* Logo Image */}
-          <img 
-            src="/lovable-uploads/b341df92-37e8-4642-91dc-ec5b4f8a9bd6.png" 
-            alt="Habesha.com Logo" 
-            className="h-24 md:h-32 w-auto mx-auto"
-          />
+          {/* Logo Text */}
+          <h1 className="text-4xl md:text-6xl font-bold font-playfair text-habesha-gold">
+            Habesha<span className="text-habesha-red">.com</span>
+          </h1>
           
           {/* Decorative line */}
           <div className="w-full h-1 bg-gradient-to-r from-habesha-gold via-habesha-red to-habesha-green mt-2 rounded-full"></div>

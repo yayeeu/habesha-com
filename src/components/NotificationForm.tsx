@@ -70,9 +70,10 @@ const NotificationForm = () => {
           <Input
             type="tel"
             name="phone"
-            placeholder="Phone Number (Optional)"
+            placeholder="Phone Number"
             value={formData.phone}
             onChange={handleInputChange}
+            required
             className="bg-background/50 border-habesha-gold/30 focus:border-habesha-gold focus:ring-habesha-gold/20 text-foreground placeholder:text-muted-foreground"
           />
         </div>

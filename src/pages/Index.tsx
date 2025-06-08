@@ -24,20 +24,20 @@ const Index = () => {
 
         {/* Main Content Grid */}
         <div className="max-w-6xl mx-auto space-y-16 md:space-y-20">
-          {/* Countdown Section */}
-          <section className="text-center">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8 font-playfair">
-              Launching Soon
-            </h2>
-            <CountdownTimer />
-          </section>
-
           {/* Form Section */}
           <section className="text-center">
             <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-8 font-playfair">
               Be the First to Experience Habesha.com
             </h3>
             <NotificationForm />
+          </section>
+
+          {/* Countdown Section */}
+          <section className="text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8 font-playfair">
+              Launching Soon
+            </h2>
+            <CountdownTimer />
           </section>
 
           {/* Cultural Elements */}

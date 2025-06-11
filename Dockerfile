@@ -10,21 +10,21 @@ RUN apk add --no-cache python3 make g++
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
-
-# Create credentials directory
-RUN mkdir -p /app/credentials
+RUN npm install --legacy-peer-deps
 
 # Copy the rest of the application
 COPY . .
 
-# Create .env file
+# Create .env file with Google credentials
 RUN echo "GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}" > .env && \
     echo "GOOGLE_CLIENT_EMAIL=${GOOGLE_CLIENT_EMAIL}" >> .env && \
     echo "GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}" >> .env
 
-# Expose port
-EXPOSE 8080
+# Install additional required dependencies
+RUN npm install googleapis google-auth-library @types/node @types/react @types/react-dom
 
-# Start the app
-CMD ["npm", "run", "dev", "--", "--host"]
+# Expose ports for frontend and backend
+EXPOSE 8080 3000
+
+# Start both frontend and backend
+CMD ["sh", "-c", "npm run dev & npm run server"]

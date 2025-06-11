@@ -3,8 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/hooks/use-toast';
 
-const API_URL = import.meta.env.VITE_API_URL || '/api';
-
 const NotificationForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -26,7 +24,7 @@ const NotificationForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${API_URL}/submit`, {
+      const response = await fetch('/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

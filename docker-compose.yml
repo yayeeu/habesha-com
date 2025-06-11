@@ -13,9 +13,9 @@ services:
       - LETSENCRYPT_HOST=www.habesha.com 
       - LETSENCRYPT_EMAIL=admin@habesha.com
       - VITE_API_URL=/api
-      - GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}
-      - GOOGLE_CLIENT_EMAIL=${GOOGLE_CLIENT_EMAIL}
-      - GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}
+      - VITE_SPREADSHEET_ID=${VITE_SPREADSHEET_ID}
+      - VITE_CLIENT_EMAIL=${VITE_CLIENT_EMAIL}
+      - VITE_PRIVATE_KEY=${VITE_PRIVATE_KEY}
     networks:
       - nginx_proxy
     volumes:

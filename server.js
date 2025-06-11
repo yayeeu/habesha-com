@@ -36,9 +36,9 @@ app.post('/api/submit', async (req, res) => {
     const auth = new JWT({
       email: process.env.GOOGLE_CLIENT_EMAIL,
       key: process.env.GOOGLE_PRIVATE_KEY
-        ?.replace(/\\n/g, '\n')
-        ?.replace(/-----BEGIN PRIVATE KEY-----/, '-----BEGIN PRIVATE KEY-----\n')
-        ?.replace(/-----END PRIVATE KEY-----/, '\n-----END PRIVATE KEY-----\n'),
+        ?.replace(/\\n/g, '\n'),
+        //?.replace(/-----BEGIN PRIVATE KEY-----/, '-----BEGIN PRIVATE KEY-----\n')
+        //?.replace(/-----END PRIVATE KEY-----/, '\n-----END PRIVATE KEY-----\n'),
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 

@@ -1,0 +1,26 @@
+FROM node:20.11.1-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apk add --no-cache python3 make g++
+
+# Copy package files first for better caching
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install --legacy-peer-deps
+
+# Copy the rest of the application
+COPY . .
+
+# Create .env file with Google credentials
+RUN echo "GOOGLE_CLIENT_EMAIL=${GOOGLE_CLIENT_EMAIL}" > .env && \
+    echo "GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}" >> .env
+
+# Expose the backend port
+EXPOSE 3000
+
+# Start the backend server
+CMD ["npm", "run", "server"] 

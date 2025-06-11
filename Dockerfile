@@ -19,7 +19,9 @@ RUN mkdir -p /app/credentials
 COPY . .
 
 # Create .env file
-#RUN echo "VITE_API_URL=/api" > .env
+RUN echo "GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}" > .env && \
+    echo "GOOGLE_CLIENT_EMAIL=${GOOGLE_CLIENT_EMAIL}" >> .env && \
+    echo "GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}" >> .env
 
 # Expose port
 EXPOSE 8080

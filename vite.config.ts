@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
       'habesha.localhost',
       'www.habesha.com',
       '.habesha.localhost', // allows all subdomains of habesha.localhost
-    ],
+    ]
   },
   plugins: [
     react(),

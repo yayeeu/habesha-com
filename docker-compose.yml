@@ -13,11 +13,13 @@ services:
       - LETSENCRYPT_HOST=www.habesha.com 
       - LETSENCRYPT_EMAIL=admin@habesha.com
       - VITE_API_URL=/api
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/service-account.json
     networks:
       - nginx_proxy
     volumes:
       - ./:/app       # Mount your code from host
       - /app/node_modules   # Prevent overwriting container's node_modules
+      - ./credentials/service-account.json:/app/credentials/service-account.json:ro
    
     
 

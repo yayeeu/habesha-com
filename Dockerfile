@@ -12,6 +12,9 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Create credentials directory
+RUN mkdir -p /app/credentials
+
 # Copy the rest of the application
 COPY . .
 

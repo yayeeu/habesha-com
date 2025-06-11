@@ -21,5 +21,8 @@ RUN npm run build
 # Expose port
 EXPOSE 3000
 
+# Set Node options for OpenSSL
+ENV NODE_OPTIONS="--openssl-legacy-provider"
+
 # Start the Express server
 CMD ["node", "server.js"] 

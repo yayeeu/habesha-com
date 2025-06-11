@@ -21,7 +21,7 @@ RUN echo "GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}" > .env && \
     echo "GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}" >> .env
 
 # Install additional required dependencies
-RUN npm install express googleapis google-auth-library dotenv @tanstack/react-query
+RUN npm install express googleapis google-auth-library dotenv @tanstack/react-query react-router-dom
 
 # Build the frontend
 RUN npm run build

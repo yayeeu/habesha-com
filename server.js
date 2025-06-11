@@ -83,7 +83,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log('Environment:', process.env.NODE_ENV || 'development');
-  console.log('Google Sheet ID:', process.env.GOOGLE_SHEET_ID ? 'Configured' : 'Not configured');
-  console.log('Google Client Email:', process.env.GOOGLE_CLIENT_EMAIL ? 'Configured' : 'Not configured');
-  console.log('Google Private Key:', process.env.GOOGLE_PRIVATE_KEY ? 'Configured' : 'Not configured');
+  console.log('Google Sheet ID:', process.env.VITE_GOOGLE_SHEET_ID ? 'Configured' : 'Not configured');
+  console.log('Google Client Email:', process.env.VITE_GOOGLE_CLIENT_EMAIL ? 'Configured' : 'Not configured');
+  console.log('Google Private Key:', process.env.VITE_GOOGLE_PRIVATE_KEY ? 'Configured' : 'Not configured');
 }); 

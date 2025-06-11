@@ -16,9 +16,9 @@ RUN npm install --legacy-peer-deps
 COPY . .
 
 # Create .env file with Google credentials
-RUN echo "GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}" > .env && \
-    echo "GOOGLE_CLIENT_EMAIL=${GOOGLE_CLIENT_EMAIL}" >> .env && \
-    echo "GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}" >> .env
+RUN echo "VITE_GOOGLE_SHEET_ID=${VITE_GOOGLE_SHEET_ID}" > .env && \
+    echo "VITE_GOOGLE_CLIENT_EMAIL=${VITE_GOOGLE_CLIENT_EMAIL}" >> .env && \
+    echo "VITE_GOOGLE_PRIVATE_KEY=${VITE_GOOGLE_PRIVATE_KEY}" >> .env
 
 # Build the frontend
 RUN npm run build

@@ -7,80 +7,81 @@ import NotificationForm from '@/components/NotificationForm';
 const Index = () => {
   return (
     <div 
-      className="min-h-screen bg-background geometric-overlay cultural-motif relative overflow-hidden"
+      className="min-h-screen bg-background geometric-grid tech-pattern relative overflow-hidden"
       style={{
-        backgroundImage: 'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundImage: `
+          url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233B82F6' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Ccircle cx='50' cy='50' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+          linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(99, 102, 241, 0.05) 50%, rgba(139, 92, 246, 0.05) 100%)
+        `,
+        backgroundSize: '60px 60px, 100% 100%'
       }}
     >
-      {/* Dark overlay for better readability */}
-      <div className="absolute inset-0 bg-background/70"></div>
+      {/* Dark overlay for contrast */}
+      <div className="absolute inset-0 bg-background/80"></div>
       
-      {/* Ambient background effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-habesha-gold/5 via-transparent to-habesha-red/5 animate-gradient-shift"></div>
+      {/* Futuristic ambient effects */}
+      <div className="absolute inset-0 futuristic-overlay"></div>
       
-      {/* Floating geometric shapes */}
-      <div className="absolute top-20 left-10 w-16 h-16 border-2 border-habesha-gold/20 rotate-45 animate-geometric-rotate"></div>
-      <div className="absolute top-40 right-20 w-12 h-12 bg-habesha-red/10 rounded-full animate-float"></div>
-      <div className="absolute bottom-32 left-20 w-8 h-8 bg-habesha-green/15 rotate-12 animate-pulse"></div>
-      <div className="absolute bottom-20 right-32 w-20 h-20 border border-habesha-gold/15 rounded-full animate-pulse-glow"></div>
+      {/* Floating tech elements */}
+      <div className="absolute top-20 left-10 w-4 h-4 bg-tech-blue/30 rounded-full animate-pulse"></div>
+      <div className="absolute top-40 right-20 w-6 h-6 border border-tech-indigo/40 rotate-45 animate-float"></div>
+      <div className="absolute bottom-32 left-20 w-3 h-3 bg-tech-indigo/40 animate-pulse"></div>
+      <div className="absolute bottom-20 right-32 w-8 h-8 border border-tech-blue/30 rounded-full animate-pulse-glow"></div>
 
-      <div className="relative z-10 container mx-auto px-4 py-12 md:py-20">
-        {/* Header Section */}
-        <header className="text-center mb-16 md:mb-20">
+      <div className="relative z-10 container mx-auto px-4 py-8">
+        {/* Countdown Section - Now at Top */}
+        <section className="text-center mb-12">
+          <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-6 font-roboto">
+            Launching Soon
+          </h2>
+          <CountdownTimer />
+        </section>
+
+        {/* Header Section with Logo */}
+        <header className="text-center mb-16">
           <HabeshaLogo />
         </header>
 
-        {/* Main Content Grid */}
-        <div className="max-w-6xl mx-auto space-y-16 md:space-y-20">
+        {/* Main Content */}
+        <div className="max-w-4xl mx-auto space-y-16">
           {/* Form Section */}
           <section className="text-center">
-            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-8 font-playfair">
-              Be the First to Experience Habesha.com
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-8 font-roboto">
+              Be the First to Experience Our Platform
             </h3>
             <NotificationForm />
           </section>
 
-          {/* Countdown Section */}
-          <section className="text-center">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-8 font-playfair">
-              Launching Soon
-            </h2>
-            <CountdownTimer />
-          </section>
-
-          {/* Cultural Elements */}
+          {/* Business Features */}
           <section className="text-center py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="group cursor-default">
-                <div className="w-16 h-16 mx-auto mb-4 bg-habesha-gold/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-habesha-gold rounded-full"></div>
+                <div className="w-16 h-16 mx-auto mb-4 bg-tech-blue/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-8 h-8 bg-tech-blue rounded-full"></div>
                 </div>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Culture</h4>
+                <h4 className="text-lg font-semibold text-foreground mb-2">Networking</h4>
                 <p className="text-muted-foreground text-sm">
-                  Celebrate our rich heritage and traditions
+                  Connect with professionals and expand your network
                 </p>
               </div>
               
               <div className="group cursor-default">
-                <div className="w-16 h-16 mx-auto mb-4 bg-habesha-red/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-habesha-red rounded-full"></div>
+                <div className="w-16 h-16 mx-auto mb-4 bg-tech-indigo/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-8 h-8 bg-tech-indigo rounded-full"></div>
                 </div>
                 <h4 className="text-lg font-semibold text-foreground mb-2">Business</h4>
                 <p className="text-muted-foreground text-sm">
-                  Connect and grow together economically
+                  Discover opportunities and grow your enterprise
                 </p>
               </div>
               
               <div className="group cursor-default">
-                <div className="w-16 h-16 mx-auto mb-4 bg-habesha-green/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-8 h-8 bg-habesha-green rounded-full"></div>
+                <div className="w-16 h-16 mx-auto mb-4 bg-tech-slate/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-8 h-8 bg-tech-slate rounded-full"></div>
                 </div>
                 <h4 className="text-lg font-semibold text-foreground mb-2">Community</h4>
                 <p className="text-muted-foreground text-sm">
-                  Build lasting bonds across the diaspora
+                  Build meaningful connections and collaborations
                 </p>
               </div>
             </div>
@@ -89,9 +90,9 @@ const Index = () => {
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 text-center py-8 border-t border-habesha-gold/20">
+      <footer className="relative z-10 text-center py-8 border-t border-border">
         <p className="text-muted-foreground text-sm">
-          © 2024 Habesha.com - Connecting Our Community Worldwide
+          © 2024 Habesha.com - Professional Networking Platform
         </p>
       </footer>
     </div>

@@ -63,22 +63,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Ethiopian-inspired colors
-				habesha: {
-					gold: '#D4AF37',
-					'gold-light': '#F4E4A6',
-					'gold-dark': '#B8941F',
-					red: '#DC2626',
-					'red-light': '#FCA5A5',
-					'red-dark': '#991B1B',
-					green: '#16A34A',
-					'green-light': '#86EFAC',
-					'green-dark': '#15803D',
-					earth: '#8B4513',
-					'earth-light': '#D2B48C',
-					'earth-dark': '#654321',
-					cream: '#F5F5DC',
-					bronze: '#CD7F32'
+				// Business/Tech theme colors
+				tech: {
+					blue: '#3B82F6',
+					'blue-light': '#93C5FD',
+					'blue-dark': '#1E40AF',
+					indigo: '#6366F1',
+					'indigo-light': '#C7D2FE',
+					'indigo-dark': '#4338CA',
+					slate: '#64748B',
+					'slate-light': '#CBD5E1',
+					'slate-dark': '#334155',
+					gray: '#6B7280',
+					'gray-light': '#D1D5DB',
+					'gray-dark': '#374151'
 				}
 			},
 			borderRadius: {
@@ -103,12 +101,12 @@ export default {
 						height: '0'
 					}
 				},
-				'gradient-shift': {
+				'tech-shift': {
 					'0%, 100%': {
-						backgroundPosition: '0% 50%'
+						backgroundPosition: '0 0, 150px 150px, 0 0'
 					},
 					'50%': {
-						backgroundPosition: '100% 50%'
+						backgroundPosition: '100px 100px, 250px 250px, 0 0'
 					}
 				},
 				'float': {
@@ -121,35 +119,23 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(212, 175, 55, 0.3)'
+						boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)'
 					},
 					'50%': {
-						boxShadow: '0 0 40px rgba(212, 175, 55, 0.6)'
-					}
-				},
-				'geometric-rotate': {
-					'0%': {
-						transform: 'rotate(0deg) scale(1)'
-					},
-					'50%': {
-						transform: 'rotate(180deg) scale(1.1)'
-					},
-					'100%': {
-						transform: 'rotate(360deg) scale(1)'
+						boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)'
 					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'gradient-shift': 'gradient-shift 8s ease-in-out infinite',
+				'tech-shift': 'tech-shift 20s ease-in-out infinite',
 				'float': 'float 6s ease-in-out infinite',
-				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-				'geometric-rotate': 'geometric-rotate 20s linear infinite'
+				'pulse-glow': 'pulse-glow 3s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'habesha-gradient': 'linear-gradient(135deg, #D4AF37 0%, #DC2626 25%, #16A34A 50%, #8B4513 75%, #D4AF37 100%)',
-				'habesha-radial': 'radial-gradient(circle at 50% 50%, #D4AF37 0%, #DC2626 25%, #16A34A 50%, #8B4513 100%)'
+				'tech-gradient': 'linear-gradient(135deg, #3B82F6 0%, #6366F1 50%, #8B5CF6 100%)',
+				'business-radial': 'radial-gradient(circle at 50% 50%, #3B82F6 0%, #1E40AF 50%, #1E3A8A 100%)'
 			}
 		}
 	},

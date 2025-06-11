@@ -40,7 +40,7 @@ const NotificationForm = () => {
   };
 
   return (
-    <div className="form-card max-w-md mx-auto">
+    <div className="form-container max-w-md mx-auto">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <Input
@@ -50,7 +50,7 @@ const NotificationForm = () => {
             value={formData.name}
             onChange={handleInputChange}
             required
-            className="bg-background/50 border-habesha-gold/30 focus:border-habesha-gold focus:ring-habesha-gold/20 text-foreground placeholder:text-muted-foreground"
+            className="bg-background/50 border-border focus:border-tech-blue focus:ring-tech-blue/20 text-foreground placeholder:text-muted-foreground"
           />
         </div>
         
@@ -62,7 +62,7 @@ const NotificationForm = () => {
             value={formData.email}
             onChange={handleInputChange}
             required
-            className="bg-background/50 border-habesha-gold/30 focus:border-habesha-gold focus:ring-habesha-gold/20 text-foreground placeholder:text-muted-foreground"
+            className="bg-background/50 border-border focus:border-tech-blue focus:ring-tech-blue/20 text-foreground placeholder:text-muted-foreground"
           />
         </div>
         
@@ -74,20 +74,20 @@ const NotificationForm = () => {
             value={formData.phone}
             onChange={handleInputChange}
             required
-            className="bg-background/50 border-habesha-gold/30 focus:border-habesha-gold focus:ring-habesha-gold/20 text-foreground placeholder:text-muted-foreground"
+            className="bg-background/50 border-border focus:border-tech-blue focus:ring-tech-blue/20 text-foreground placeholder:text-muted-foreground"
           />
         </div>
 
         <Button 
           type="submit" 
           disabled={isSubmitting}
-          className="w-full bg-habesha-gold hover:bg-habesha-gold-dark text-background font-semibold py-3 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-tech-blue hover:bg-tech-blue-dark text-white font-semibold py-3 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Submitting...' : 'Notify Me'}
+          {isSubmitting ? 'Submitting...' : 'Get Notified'}
         </Button>
         
         <p className="text-xs text-muted-foreground text-center mt-4 italic">
-          No spam – just one email or text when we launch.
+          No spam – just one notification when we launch.
         </p>
       </form>
     </div>

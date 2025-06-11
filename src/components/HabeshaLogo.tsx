@@ -4,25 +4,22 @@ import React from 'react';
 const HabeshaLogo = () => {
   return (
     <div className="text-center animate-float">
-      <div className="inline-flex items-center justify-center mb-4">
+      <div className="inline-flex items-center justify-center mb-6">
         <div className="relative">
-          {/* Decorative geometric elements */}
-          <div className="absolute -top-2 -left-2 w-3 h-3 bg-habesha-gold rounded-full opacity-60"></div>
-          <div className="absolute -top-1 -right-1 w-2 h-2 bg-habesha-red rounded-full opacity-80"></div>
-          <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-habesha-green rounded-full opacity-70"></div>
+          {/* Logo Image */}
+          <img 
+            src="/lovable-uploads/34d83462-225a-4ff7-bd8a-1a866af08ad4.png" 
+            alt="Habesha.com Logo" 
+            className="h-20 md:h-24 w-auto object-contain filter drop-shadow-lg"
+          />
           
-          {/* Logo Text */}
-          <h1 className="text-4xl md:text-6xl font-bold font-playfair text-habesha-gold">
-            Habesha<span className="text-habesha-red">.com</span>
-          </h1>
-          
-          {/* Decorative line */}
-          <div className="w-full h-1 bg-gradient-to-r from-habesha-gold via-habesha-red to-habesha-green mt-2 rounded-full"></div>
+          {/* Futuristic glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-tech-blue/20 via-tech-indigo/20 to-tech-blue/20 rounded-lg blur-xl opacity-50"></div>
         </div>
       </div>
       
       <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed font-medium">
-        Your one-stop hub for the Habesha diaspora – culture, business & community
+        Your premier digital platform for business networking and community connections
       </p>
     </div>
   );

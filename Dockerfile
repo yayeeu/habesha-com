@@ -10,7 +10,8 @@ RUN apk add --no-cache python3 make g++
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --legacy-peer-deps
+RUN npm install --legacy-peer-deps && \
+    npm install express googleapis google-auth-library dotenv @tanstack/react-query react-router-dom @radix-ui/react-tooltip @radix-ui/react-toast @radix-ui/react-slot @radix-ui/react-aspect-ratio @radix-ui/react-collapsible sonner
 
 # Copy the rest of the application
 COPY . .
@@ -19,9 +20,6 @@ COPY . .
 RUN echo "GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}" > .env && \
     echo "GOOGLE_CLIENT_EMAIL=${GOOGLE_CLIENT_EMAIL}" >> .env && \
     echo "GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}" >> .env
-
-# Install additional required dependencies
-RUN npm install express googleapis google-auth-library dotenv @tanstack/react-query react-router-dom @radix-ui/react-tooltip @radix-ui/react-toast @radix-ui/react-slot @radix-ui/react-aspect-ratio @radix-ui/react-collapsible sonner
 
 # Build the frontend
 RUN npm run build

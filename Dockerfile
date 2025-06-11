@@ -24,7 +24,7 @@ RUN echo "GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}" > .env && \
 RUN npm run build
 
 # Expose port
-EXPOSE 80
+EXPOSE 3000
 
 # Start the Express server
 CMD ["node", "server.js"] 

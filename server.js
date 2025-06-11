@@ -5,7 +5,7 @@ const { JWT } = require('google-auth-library');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());

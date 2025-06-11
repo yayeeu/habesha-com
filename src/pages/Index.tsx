@@ -9,16 +9,16 @@ const Index = () => {
     <div 
       className="min-h-screen relative overflow-hidden"
       style={{
-        background: `
-          radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
-          radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
-          radial-gradient(circle at 60% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 35%),
-          linear-gradient(135deg, rgba(59, 130, 246, 0.03) 0%, rgba(99, 102, 241, 0.05) 50%, transparent 100%),
-          transparent
-        `
+        backgroundImage: `
+          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
+          url('/lovable-uploads/859c2edf-edaa-4dd0-bdc1-0d3dea20e0f8.png')
+        `,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
       }}
     >
-      {/* Animated floating particles */}
+      {/* Creative overlay elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Large floating orbs */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-tech-blue/10 to-tech-indigo/10 rounded-full blur-xl animate-float"></div>
@@ -68,23 +68,11 @@ const Index = () => {
           </svg>
         </div>
       </div>
-      
-      {/* Subtle grid overlay */}
-      <div 
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px'
-        }}
-      ></div>
 
       <div className="relative z-10 container mx-auto px-4 py-8">
         {/* Countdown Section - At Top */}
         <section className="text-center mb-12">
-          <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-6 font-roboto">
+          <h2 className="text-xl md:text-2xl font-semibold text-white mb-6 font-roboto drop-shadow-lg">
             Launching Soon
           </h2>
           <CountdownTimer />
@@ -99,7 +87,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto space-y-16">
           {/* Form Section */}
           <section className="text-center">
-            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-8 font-roboto">
+            <h3 className="text-xl md:text-2xl font-semibold text-white mb-8 font-roboto drop-shadow-lg">
               Be the First to Experience Our Platform
             </h3>
             <NotificationForm />
@@ -109,31 +97,31 @@ const Index = () => {
           <section className="text-center py-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="group cursor-default">
-                <div className="w-16 h-16 mx-auto mb-4 bg-tech-blue/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 bg-tech-blue/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-white/20">
                   <div className="w-8 h-8 bg-tech-blue rounded-full"></div>
                 </div>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Networking</h4>
-                <p className="text-muted-foreground text-sm">
+                <h4 className="text-lg font-semibold text-white mb-2 drop-shadow-lg">Networking</h4>
+                <p className="text-white/80 text-sm drop-shadow-md">
                   Connect with professionals and expand your network
                 </p>
               </div>
               
               <div className="group cursor-default">
-                <div className="w-16 h-16 mx-auto mb-4 bg-tech-indigo/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 bg-tech-indigo/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-white/20">
                   <div className="w-8 h-8 bg-tech-indigo rounded-full"></div>
                 </div>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Business</h4>
-                <p className="text-muted-foreground text-sm">
+                <h4 className="text-lg font-semibold text-white mb-2 drop-shadow-lg">Business</h4>
+                <p className="text-white/80 text-sm drop-shadow-md">
                   Discover opportunities and grow your enterprise
                 </p>
               </div>
               
               <div className="group cursor-default">
-                <div className="w-16 h-16 mx-auto mb-4 bg-tech-slate/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 bg-tech-slate/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-white/20">
                   <div className="w-8 h-8 bg-tech-slate rounded-full"></div>
                 </div>
-                <h4 className="text-lg font-semibold text-foreground mb-2">Community</h4>
-                <p className="text-muted-foreground text-sm">
+                <h4 className="text-lg font-semibold text-white mb-2 drop-shadow-lg">Community</h4>
+                <p className="text-white/80 text-sm drop-shadow-md">
                   Build meaningful connections and collaborations
                 </p>
               </div>
@@ -143,8 +131,8 @@ const Index = () => {
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 text-center py-8 border-t border-border">
-        <p className="text-muted-foreground text-sm">
+      <footer className="relative z-10 text-center py-8 border-t border-white/20 backdrop-blur-sm">
+        <p className="text-white/70 text-sm drop-shadow-md">
           © 2024 Habesha.com - Professional Networking Platform
         </p>
       </footer>

@@ -17,9 +17,6 @@ services:
       - GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}
     networks:
       - nginx_proxy
-    volumes:
-      - .:/app
-      - /app/node_modules
 
 networks:
   nginx_proxy:

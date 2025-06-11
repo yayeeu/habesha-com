@@ -1,8 +1,9 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/hooks/use-toast';
+
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const NotificationForm = () => {
   const [formData, setFormData] = useState({
@@ -24,19 +25,37 @@ const NotificationForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch(`${API_URL}/submit`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    console.log('Form submitted:', formData);
-    
-    toast({
-      title: "Success! 🎉",
-      description: "You'll be the first to know when we launch!",
-    });
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to submit form');
+      }
 
-    // Reset form
-    setFormData({ name: '', email: '', phone: '' });
-    setIsSubmitting(false);
+      toast({
+        title: "Success! 🎉",
+        description: "You'll be the first to know when we launch!",
+      });
+
+      // Reset form
+      setFormData({ name: '', email: '', phone: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

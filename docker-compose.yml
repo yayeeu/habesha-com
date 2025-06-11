@@ -12,6 +12,7 @@ services:
       - VIRTUAL_PORT=8080
       - LETSENCRYPT_HOST=www.habesha.com 
       - LETSENCRYPT_EMAIL=admin@habesha.com
+      - VITE_API_URL=/api
     networks:
       - nginx_proxy
     volumes:

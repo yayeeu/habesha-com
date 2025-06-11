@@ -3,17 +3,23 @@ FROM node:20.11.1-alpine
 # Set working directory
 WORKDIR /app
 
-# Copy package files first for better caching
+# Install system dependencies
+RUN apk add --no-cache python3 make g++
+
+# Copy package files
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --legacy-peer-deps
+RUN npm install
 
 # Copy the rest of the application
 COPY . .
 
-# Expose the correct port
+# Create .env file
+#RUN echo "VITE_API_URL=/api" > .env
+
+# Expose port
 EXPOSE 8080
 
-# Start the app in development mode with hot reloading
+# Start the app
 CMD ["npm", "run", "dev", "--", "--host"]

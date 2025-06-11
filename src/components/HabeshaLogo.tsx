@@ -8,7 +8,7 @@ const HabeshaLogo = () => {
         <div className="relative">
           {/* Logo Image - using original size */}
           <img 
-            src="/lovable-uploads/c92b804d-ddf3-4fea-ad1c-1d441ca96dd6.png" 
+            src="/lovable-uploads/c455a299-6186-4f8f-9523-265ec177ef0e.png" 
             alt="Habesha.com Logo" 
             className="w-auto h-auto object-contain filter drop-shadow-2xl"
           />

@@ -10,8 +10,7 @@ RUN apk add --no-cache python3 make g++
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --legacy-peer-deps && \
-    npm install express googleapis google-auth-library dotenv @tanstack/react-query react-router-dom @radix-ui/react-tooltip @radix-ui/react-toast @radix-ui/react-slot @radix-ui/react-aspect-ratio @radix-ui/react-collapsible sonner
+RUN npm install --legacy-peer-deps
 
 # Copy the rest of the application
 COPY . .

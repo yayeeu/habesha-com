@@ -27,4 +27,4 @@ RUN npm install googleapis google-auth-library @types/node @types/react @types/r
 EXPOSE 8080 3000
 
 # Start both frontend and backend
-CMD ["sh", "-c", "npm run dev & npm run server"]
+CMD ["npm", "run", "dev", "--", "--host"] 

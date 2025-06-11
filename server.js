@@ -47,10 +47,23 @@ app.post('/api/submit', async (req, res) => {
     // Append data to the sheet
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: 'Sheet1!A:C',
+      range: 'Sheet1!A:D',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[name, email, phone]],
+        values: [[
+          name, 
+          email, 
+          phone,
+          new Date().toLocaleString('en-US', { 
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+          })
+        ]],
       },
     });
 

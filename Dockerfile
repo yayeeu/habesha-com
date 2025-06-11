@@ -21,10 +21,13 @@ RUN echo "GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}" > .env && \
     echo "GOOGLE_PRIVATE_KEY=${GOOGLE_PRIVATE_KEY}" >> .env
 
 # Install additional required dependencies
-RUN npm install googleapis google-auth-library @types/node @types/react @types/react-dom
+RUN npm install express googleapis google-auth-library dotenv
 
-# Expose ports for frontend and backend
-EXPOSE 8080 3000
+# Build the frontend
+RUN npm run build
 
-# Start both frontend and backend
-CMD ["npm", "run", "dev", "--", "--host"] 
+# Expose port
+EXPOSE 80
+
+# Start the Express server
+CMD ["node", "server.js"] 

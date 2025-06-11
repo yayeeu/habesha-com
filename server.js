@@ -38,7 +38,7 @@ app.post('/api/submit', async (req, res) => {
       key: process.env.GOOGLE_PRIVATE_KEY
         ?.replace(/\\n/g, '\n')
         ?.replace(/-----BEGIN PRIVATE KEY-----/, '-----BEGIN PRIVATE KEY-----\n')
-        ?.replace(/-----END PRIVATE KEY-----/, '\n-----END PRIVATE KEY-----'),
+        ?.replace(/-----END PRIVATE KEY-----/, '\n-----END PRIVATE KEY-----\n'),
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 

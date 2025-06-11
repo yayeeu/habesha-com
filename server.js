@@ -1,8 +1,14 @@
-const express = require('express');
-const path = require('path');
-const { google } = require('googleapis');
-const { JWT } = require('google-auth-library');
-require('dotenv').config();
+import express from 'express';
+import path from 'path';
+import { google } from 'googleapis';
+import { JWT } from 'google-auth-library';
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+
+dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;

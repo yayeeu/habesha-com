@@ -34,8 +34,8 @@ app.post('/api/submit', async (req, res) => {
 
     // Initialize Google Sheets client
     const auth = new JWT({
-      email: process.env.VITE_GOOGLE_CLIENT_EMAIL,
-      key: process.env.VITE_GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+      email: process.env.GOOGLE_CLIENT_EMAIL,
+      key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
@@ -43,7 +43,7 @@ app.post('/api/submit', async (req, res) => {
 
     // Append data to the sheet
     await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.VITE_GOOGLE_SHEET_ID,
+      spreadsheetId: process.env.GOOGLE_SHEET_ID,
       range: 'Sheet1!A:C',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
@@ -83,7 +83,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log('Environment:', process.env.NODE_ENV || 'development');
-  console.log('Google Sheet ID:', process.env.VITE_GOOGLE_SHEET_ID ? 'Configured' : 'Not configured');
-  console.log('Google Client Email:', process.env.VITE_GOOGLE_CLIENT_EMAIL ? 'Configured' : 'Not configured');
-  console.log('Google Private Key:', process.env.VITE_GOOGLE_PRIVATE_KEY ? 'Configured' : 'Not configured');
+  console.log('Google Sheet ID:', process.env.GOOGLE_SHEET_ID ? 'Configured' : 'Not configured');
+  console.log('Google Client Email:', process.env.GOOGLE_CLIENT_EMAIL ? 'Configured' : 'Not configured');
+  console.log('Google Private Key:', process.env.GOOGLE_PRIVATE_KEY ? 'Configured' : 'Not configured');
 }); 

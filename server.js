@@ -23,8 +23,8 @@ app.use((req, res, next) => {
 // === Your API endpoint ===
 app.post('/api/submit', async (req, res) => {
   try {
-    const { name, email, phone } = req.body;
-    console.log('Received form submission:', { name, email, phone });
+    const { name, email, phone, location } = req.body;
+    console.log('Received form submission:', { name, email, phone, location });
 
     // Validate required fields
     if (!name || !email || !phone) {
@@ -37,17 +37,24 @@ app.post('/api/submit', async (req, res) => {
       email: process.env.GOOGLE_CLIENT_EMAIL,
       key: process.env.GOOGLE_PRIVATE_KEY
         ?.replace(/\\n/g, '\n'),
-        //?.replace(/-----BEGIN PRIVATE KEY-----/, '-----BEGIN PRIVATE KEY-----\n')
-        //?.replace(/-----END PRIVATE KEY-----/, '\n-----END PRIVATE KEY-----\n'),
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
     const sheets = google.sheets({ version: 'v4', auth });
 
+    // Format location data
+    const locationString = location ? [
+      location.ip,
+      location.city || 'Unknown',
+      location.region || 'Unknown',
+      location.country || 'Unknown',
+      location.timezone || 'Unknown'
+    ].join(', ') : 'Location data not available';
+
     // Append data to the sheet
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: 'Sheet1!A:D',
+      range: 'Sheet1!A:E', // Updated range to include location
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [[
@@ -62,7 +69,8 @@ app.post('/api/submit', async (req, res) => {
             minute: '2-digit',
             second: '2-digit',
             hour12: true
-          })
+          }),
+          locationString
         ]],
       },
     });

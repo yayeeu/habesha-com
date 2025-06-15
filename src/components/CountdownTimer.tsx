@@ -1,8 +1,14 @@
+import { useState, useEffect } from 'react';
 
-import React, { useState, useEffect } from 'react';
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
 
 const CountdownTimer = () => {
-  const [timeLeft, setTimeLeft] = useState({
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
     minutes: 0,
@@ -41,8 +47,8 @@ const CountdownTimer = () => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
       {timeUnits.map(({ label, value }) => (
-        <div key={label} className="business-card animate-pulse-glow">
-          <div className="text-3xl md:text-4xl font-bold text-tech-blue mb-2 font-roboto">
+        <div key={label} className="bg-white/90 backdrop-blur-md border border-border rounded-lg p-6 text-center shadow-sm">
+          <div className="text-3xl md:text-4xl font-bold text-primary mb-2 font-inter">
             {value.toString().padStart(2, '0')}
           </div>
           <div className="text-sm md:text-base text-muted-foreground uppercase tracking-wide">

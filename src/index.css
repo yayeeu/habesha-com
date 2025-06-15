@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -136,14 +135,14 @@
   }
 
   .business-card {
-    @apply bg-card/90 backdrop-blur-md border border-border rounded-lg p-6 text-center;
+    @apply bg-white opacity-90 backdrop-blur-md border border-border rounded-lg p-6 text-center;
     box-shadow: 
       0 4px 20px rgba(59, 130, 246, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .form-container {
-    @apply bg-card/95 backdrop-blur-md border border-border rounded-xl p-8;
+    @apply bg-white opacity-95 backdrop-blur-md border border-border rounded-xl p-8;
     box-shadow: 
       0 8px 32px rgba(59, 130, 246, 0.15),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);

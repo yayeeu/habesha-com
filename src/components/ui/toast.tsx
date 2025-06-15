@@ -2,6 +2,7 @@ import * as React from "react"
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva, type VariantProps } from "class-variance-authority"
 import { X } from "lucide-react"
+import { Toaster as Sonner } from "sonner"
 
 import { cn } from "@/lib/utils"
 
@@ -114,6 +115,28 @@ type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>
 
 type ToastActionElement = React.ReactElement<typeof ToastAction>
 
+type ToasterProps = React.ComponentProps<typeof Sonner>
+
+const Toaster = ({ ...props }: ToasterProps) => {
+  return (
+    <Sonner
+      className="toaster group"
+      toastOptions={{
+        classNames: {
+          toast:
+            "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
+          description: "group-[.toast]:text-muted-foreground",
+          actionButton:
+            "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
+          cancelButton:
+            "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
+        },
+      }}
+      {...props}
+    />
+  )
+}
+
 export {
   type ToastProps,
   type ToastActionElement,
@@ -124,4 +147,5 @@ export {
   ToastDescription,
   ToastClose,
   ToastAction,
+  Toaster,
 }

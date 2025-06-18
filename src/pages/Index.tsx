@@ -28,9 +28,9 @@ const Index = () => {
             >
               is almost here !
             </h1>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-center" style={{ color: "#00217d" }}>
+            <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-center" style={{ color: "#00217d" }}>
               Join us for culture, business & community
-            </h2>
+            </h3>
           </div>
 
           {/* Notification Form */}

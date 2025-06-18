@@ -28,7 +28,7 @@ const Index = () => {
             >
               is almost here !
             </h1>
-            <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-center" style={{ color: "#00217d" }}>
+            <h3 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight text-center" style={{ color: "#00217d" }}>
               Join us for culture, business & community
             </h3>
           </div>

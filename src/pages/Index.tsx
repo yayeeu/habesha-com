@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white font-inter flex flex-col">
       {/* Header */}
-      <header className="px-4 py-6 md:px-8">
+      <header className="px-4 py-2 md:px-8">
         <div className="flex items-center">
           {/* Logo removed from header */}
         </div>

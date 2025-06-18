@@ -10,9 +10,9 @@ services:
     env_file:
       - .env
     environment:
-      - VIRTUAL_HOST=www.habesha.com
+      - VIRTUAL_HOST=www.habesha.com, habesha.com
       - VIRTUAL_PORT=3000
-      - LETSENCRYPT_HOST=www.habesha.com
+      - LETSENCRYPT_HOST=www.habesha.com, habesha.com
       - LETSENCRYPT_EMAIL=admin@habesha.com
       - GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}
       - GOOGLE_CLIENT_EMAIL=${GOOGLE_CLIENT_EMAIL}

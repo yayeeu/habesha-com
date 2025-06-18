@@ -26,8 +26,11 @@ const Index = () => {
               className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-center"
               style={{ color: "#00217d" }}
             >
-              is almost here
+              is almost here !
             </h1>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-center" style={{ color: "#00217d" }}>
+              Join us for culture, business & community
+            </h2>
           </div>
 
           {/* Notification Form */}

@@ -45,37 +45,12 @@ const Index = () => {
       <footer className="px-4 py-8 md:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col items-center space-y-4">
-            {/* Social Icons */}
-            <div className="flex space-x-6">
-              <a 
-                href="" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary transition-colors duration-200"
-                aria-label="Follow us on Instagram"
-              >
-                <Instagram size={24} />
-              </a>
-              <a 
-                href="" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary transition-colors duration-200"
-                aria-label="Follow us on Twitter"
-              >
-                <Twitter size={24} />
-              </a>
-            </div>
+           
             
             {/* Copyright */}
             <div className="flex items-center space-x-2 text-sm text-gray-500 font-light">
-              <span>© 2025</span>
-              <img 
-                src="/lovable-uploads/4a41c835-0397-4b95-82e6-f78f288880b7.png" 
-                alt="Habesha.com Logo" 
-                className="h-4 w-auto"
-              />
-              <span>| New York and Seattle</span>
+              <span>©2025 </span>&nbsp;Habesha.com | info@habesha.com
+              
             </div>
           </div>
         </div>

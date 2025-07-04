@@ -153,7 +153,7 @@ const NotificationForm = () => {
             onCheckedChange={(checked) => setConsentChecked(checked as boolean)}
             className="mt-1"
           />
-          <Label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed">
+          <Label htmlFor="consent" className="text-xs text-muted-foreground leading-relaxed italic">
             By submitting this form, you agree to receive automated emails and text messages from us with updates and information. Message frequency may vary. You can unsubscribe at any time by following the instructions provided in the messages.
           </Label>
         </div>

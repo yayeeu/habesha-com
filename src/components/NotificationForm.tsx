@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
 
 interface LocationData {
@@ -17,6 +19,7 @@ const NotificationForm = () => {
     email: '',
     phone: ''
   });
+  const [consentChecked, setConsentChecked] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [locationData, setLocationData] = useState<LocationData | null>(null);
@@ -58,6 +61,15 @@ const NotificationForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check if consent is given
+    if (!consentChecked) {
+      toast.error("Consent Required", {
+        description: "You must agree to receive communications from us to submit this form.",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
     setShowSuccess(false);
 
@@ -83,6 +95,7 @@ const NotificationForm = () => {
       
       // Reset form
       setFormData({ name: '', email: '', phone: '' });
+      setConsentChecked(false);
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error("Error", {
@@ -132,9 +145,22 @@ const NotificationForm = () => {
           />
         </div>
 
+        {/* Consent Checkbox */}
+        <div className="flex items-start space-x-2">
+          <Checkbox
+            id="consent"
+            checked={consentChecked}
+            onCheckedChange={(checked) => setConsentChecked(checked as boolean)}
+            className="mt-1"
+          />
+          <Label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed">
+            By submitting this form, you agree to receive automated emails and text messages from us with updates and information. Message frequency may vary. You can unsubscribe at any time by following the instructions provided in the messages.
+          </Label>
+        </div>
+
         <Button 
           type="submit" 
-          disabled={isSubmitting}
+          disabled={isSubmitting || !consentChecked}
           className="w-full text-white font-semibold py-3 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
           style={{ backgroundColor: "#00217d" }}
         >

@@ -1,4 +1,4 @@
-FROM node:16.20.2-alpine
+FROM node:18-alpine
 
 # Set working directory
 WORKDIR /app
@@ -10,8 +10,7 @@ RUN apk add --no-cache python3 make g++
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install --legacy-peer-deps
-
+RUN npm install
 
 # Copy the rest of the application
 COPY . .
@@ -21,9 +20,6 @@ RUN npm run build
 
 # Expose port
 EXPOSE 3000
-
-# Set Node options for OpenSSL
-#ENV NODE_OPTIONS="--openssl-legacy-provider"
 
 # Start the Express server
 CMD ["node", "server.js"] 

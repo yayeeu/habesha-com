@@ -20,7 +20,7 @@ This project is built using modern web technologies and best practices to ensure
 4. Start contributing!
 
 ## Deployment
-The platform is scheduled to launch on August 22, 2025. Stay tuned for updates and announcements.
+The platform is scheduled to launch on September 11, 2025. Stay tuned for updates and announcements.
 
 ## Contributing
 We welcome contributions from the community! Please read our contributing guidelines before submitting pull requests.

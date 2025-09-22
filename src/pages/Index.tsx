@@ -1,6 +1,5 @@
 import { Instagram, Twitter } from 'lucide-react';
 import NotificationForm from '@/components/NotificationForm';
-import CountdownTimer from '@/components/CountdownTimer';
 
 const Index = () => {
   return (
@@ -35,9 +34,6 @@ const Index = () => {
 
           {/* Notification Form */}
           <NotificationForm />
-
-          {/* Countdown Timer */}
-          <CountdownTimer />
         </div>
       </main>
 
